@@ -10,17 +10,23 @@ const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
 
 // Problem 1
 const printEveryWord = (words) => {
-
+words.forEach((word) => {
+  console.log(word);
+})
 };
 
-// Problem 2
-const getStringLengths = (strings) => {
+//const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
+//printEveryWord(sampleWords);
 
+
+// Problem 2
+const getStringLengths = (strings) => { // .map takes the result from each callback and builds a new array. doesnt modify the original
+return strings.map((string) => string.length); // what does the callback need to do?
 };
 
 // Problem 3
-const sortWordsZtoA = (words) => {
-
+const sortWordsZtoA = (words) => { // .sort rearranges the elements of the array (mutates it)
+words.sort((a, b) => b.localeCompare(a));
 };
 
 /* -------------------------------------------- */
@@ -31,12 +37,13 @@ const sampleNumbers = [7, 3, 9, 1, 4, 8, 2, 10, 5, 6];
 
 // Problem 4
 const getEvenNumbers = (nums) => {
-
+return numbers.filter((num) => num % 2 === 0);
 };
+
 
 // Problem 5
 const getLargestNumber = (numbers) => {
-
+return numbers.filter((number) => number % 2 === 0);
 };
 
 /* -------------------------------------------------- */
@@ -53,28 +60,30 @@ const sampleUsers = [
 
 // Problem 6
 const printUserNamesAndScores = (users) => {
-
+users.forEach((user) => {
+  console.log(`${user.name} scored ${user.score} points.`);
+})
 };
 
 
 // Problem 7
 const getUserNames = (users) => {
-
+return users.map((user) => user.name);
 };
 
 
 // Problem 8
 const getActiveUsersUnder30 = (users) => {
-
+return users.filter((user) => user.isActive === true && user.age < 30);
 };
 
 
 // Problem 9
 const getTotalScore = (users) => {
-
+return users.reduce((total, user) => total + user.score, 0);
 };
 
 // Problem 10
 const sortUsersByScoreDescending = (users) => {
-
+users.sort((a, b) => b.score - a.score);
 };
